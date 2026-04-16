@@ -1,0 +1,365 @@
+/* Team Page Styling */
+
+/* ========================================
+   SECTION 1: Hero Banner
+   ======================================== */
+
+.team-page {
+  background-color: #ffffff;
+}
+
+.team-hero {
+  background: linear-gradient(135deg, #ff4d8d 0%, #ff6ba3 50%, #e63d7a 100%);
+  padding: 120px 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Decorative elements */
+.team-hero::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  top: -250px;
+  right: -150px;
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.team-hero::after {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  bottom: -200px;
+  left: -100px;
+  z-index: 0;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+.team-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.team-hero-title {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  color: #ffffff;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.team-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ========================================
+   SECTION 2: Team Members Grid
+   ======================================== */
+
+.team-members-section {
+  background-color: #ffffff;
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Section Header */
+.section-header {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: #2c3e50;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Team Cards */
+.team-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.team-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(255, 77, 141, 0.15);
+}
+
+/* Team Image Wrapper */
+.team-image-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff5f9 0%, #ffe8f0 100%);
+}
+
+.team-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-card:hover .team-image {
+  transform: scale(1.08);
+}
+
+.team-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 77, 141, 0.1);
+  border-radius: 16px 16px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .team-image-overlay {
+  opacity: 1;
+}
+
+/* Team Card Content */
+.team-card-content {
+  padding: 2rem 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.team-member-name {
+  font-size: 1.375rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.team-member-position {
+  color: #ff4d8d;
+  font-size: 0.975rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.team-member-description {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Skill Tags */
+.team-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.skill-tag {
+  display: inline-block;
+  background: linear-gradient(135deg, #fff5f9 0%, #ffe8f0 100%);
+  color: #ff4d8d;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1.5px solid rgba(255, 77, 141, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: #ff4d8d;
+  color: #ffffff;
+  border-color: #ff4d8d;
+}
+
+/* ========================================
+   SECTION 3: Why Choose Our Team
+   ======================================== */
+
+.why-choose-team {
+  background: linear-gradient(135deg, #fff5f9 0%, #ffe8f0 60%, #ffd4e5 100%);
+  padding: 6rem 0;
+  position: relative;
+}
+
+/* Why Cards */
+.why-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 77, 141, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.why-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(255, 77, 141, 0.12);
+  border-color: rgba(255, 77, 141, 0.3);
+}
+
+/* Why Card Icon */
+.why-card-icon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #ff4d8d 0%, #ff6ba3 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.why-card:hover .why-card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Why Card Title */
+.why-card-title {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+/* Why Card Description */
+.why-card-description {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 768px) {
+  .team-hero {
+    padding: 80px 1.5rem;
+    min-height: 300px;
+  }
+
+  .team-members-section {
+    padding: 4rem 0;
+  }
+
+  .team-card-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .team-member-name {
+    font-size: 1.25rem;
+  }
+
+  .why-choose-team {
+    padding: 4rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .team-hero {
+    padding: 60px 1rem;
+    min-height: 250px;
+  }
+
+  .team-hero-title {
+    font-size: 2rem;
+  }
+
+  .team-hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .team-member-name {
+    font-size: 1.1rem;
+  }
+
+  .team-member-description {
+    font-size: 0.9rem;
+  }
+
+  .skill-tag {
+    font-size: 0.75rem;
+    padding: 0.35rem 0.75rem;
+  }
+
+  .why-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .why-card-title {
+    font-size: 1.1rem;
+  }
+}

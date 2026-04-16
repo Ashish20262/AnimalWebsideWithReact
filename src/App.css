@@ -1,0 +1,15 @@
+/* App Root Styles */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+body {
+  background-color: #ffffff;
+}
+html {
+  scroll-behavior: smooth;
+}
